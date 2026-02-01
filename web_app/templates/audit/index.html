@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block title %}{{ title }}{% endblock %} {% block
+content %}
+<h1>Auditoria de IA</h1>
+<p>Inicie uma auditoria dos modelos disponíveis.</p>
+<form id="audit-form">
+  <label for="model_id">ID do modelo:</label>
+  <input type="text" id="model_id" name="model_id" />
+  <button type="button" onclick="runAudit()">Executar auditoria</button>
+</form>
+<div id="audit-result"></div>
+<script>
+  async function runAudit() {
+    const modelId = document.getElementById("model_id").value;
+    const res = await fetch("/audit/run-audit", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ model_id: modelId }),
+    });
+    const data = await res.json();
+    document.getElementById("audit-result").innerText = JSON.stringify(
+      data,
+      null,
+      2,
+    );
+  }
+</script>
+{% endblock %}

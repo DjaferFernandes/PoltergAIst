@@ -1,0 +1,12 @@
+{% extends 'base.html' %} {% block title %}Relatórios de Auditoria{% endblock %}
+{% block content %}
+<h1>Relatórios</h1>
+{% if reports %}
+<ul>
+  {% for r in reports %}
+  <li>{{ r }}</li>
+  {% endfor %}
+</ul>
+{% else %}
+<p>Nenhum relatório disponível.</p>
+{% endif %} {% endblock %}

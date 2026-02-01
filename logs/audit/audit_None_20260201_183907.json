@@ -1,0 +1,22 @@
+{
+  "model_id": null,
+  "timestamp": "2026-02-01T18:39:07.338718",
+  "checks": [
+    {
+      "check": "bias_analysis",
+      "result": "passed",
+      "score": 0.85
+    },
+    {
+      "check": "transparency",
+      "result": "warning",
+      "score": 0.65
+    },
+    {
+      "check": "data_privacy",
+      "result": "passed",
+      "score": 0.92
+    }
+  ],
+  "status": "completed"
+}

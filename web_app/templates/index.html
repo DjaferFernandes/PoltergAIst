@@ -1,0 +1,134 @@
+{% extends "base.html" %} {% block title %}PolterGaist - Auditoria de Sistemas
+de IA{% endblock %} {% block content %}
+<section class="hero">
+  <div class="container">
+    <h1>Auditoria Inteligente para Sistemas de IA</h1>
+    <p>
+      Detecte vieses, avalie transparência e garanta conformidade em seus
+      modelos de Inteligência Artificial com o PolterGaist.
+    </p>
+
+    <div class="cta-buttons">
+      <a
+        href="{{ url_for('audit.audit_home') }}"
+        class="btn btn-primary btn-lg"
+      >
+        <i class="fas fa-play-circle"></i> Começar Auditoria
+      </a>
+      <a href="#features" class="btn btn-secondary btn-lg">
+        <i class="fas fa-info-circle"></i> Saiba Mais
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="container" id="features">
+  <h2 class="section-title">Recursos do PolterGaist</h2>
+
+  <div class="features">
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-balance-scale"></i>
+      </div>
+      <h3>Análise de Viés</h3>
+      <p>
+        Identifique e quantifique vieses em datasets e modelos de machine
+        learning usando algoritmos avançados.
+      </p>
+      <ul>
+        <li>Detecção de bias demográfico</li>
+        <li>Análise de fairness</li>
+        <li>Relatórios detalhados</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-eye"></i>
+      </div>
+      <h3>Transparência (XAI)</h3>
+      <p>
+        Torne seus modelos explicáveis com técnicas de Explainable AI (XAI)
+        integradas.
+      </p>
+      <ul>
+        <li>SHAP values</li>
+        <li>LIME explanations</li>
+        <li>Feature importance</li>
+      </ul>
+    </div>
+
+    <div class="feature-card">
+      <div class="feature-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <h3>Conformidade LGPD</h3>
+      <p>
+        Verifique se seus sistemas atendem aos requisitos da Lei Geral de
+        Proteção de Dados.
+      </p>
+      <ul>
+        <li>Anonimização de dados</li>
+        <li>Auditoria de privacidade</li>
+        <li>Relatórios de conformidade</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<section class="container">
+  <h2 class="section-title">Dashboard de Auditoria</h2>
+
+  <div class="stats-grid">
+    <div class="stat-card">
+      <div class="stat-icon" style="background: rgba(99, 102, 241, 0.2)">
+        <i class="fas fa-robot" style="color: var(--primary-color)"></i>
+      </div>
+      <div class="stat-info">
+        <h4>Modelos Auditados</h4>
+        <div class="value">42</div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon" style="background: rgba(16, 185, 129, 0.2)">
+        <i
+          class="fas fa-check-circle"
+          style="color: var(--secondary-color)"
+        ></i>
+      </div>
+      <div class="stat-info">
+        <h4>Auditorias Bem-sucedidas</h4>
+        <div class="value">38</div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon" style="background: rgba(245, 158, 11, 0.2)">
+        <i
+          class="fas fa-exclamation-triangle"
+          style="color: var(--accent-color)"
+        ></i>
+      </div>
+      <div class="stat-info">
+        <h4>Problemas Encontrados</h4>
+        <div class="value">15</div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-icon" style="background: rgba(239, 68, 68, 0.2)">
+        <i class="fas fa-times-circle" style="color: var(--danger-color)"></i>
+      </div>
+      <div class="stat-info">
+        <h4>Críticos</h4>
+        <div class="value">3</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="chart-container">
+    <canvas id="auditChart" width="400" height="200"></canvas>
+  </div>
+</section>
+{% endblock %}

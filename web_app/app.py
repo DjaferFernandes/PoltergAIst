@@ -1,10 +1,6 @@
-from flask import Flask, render_template
+from . import create_app
 
-app = Flask(__name__)
-
-@app.route('/')
-def home():
-    return "Olá, Mundo! Este é meu site com Python"
+app = create_app()
 
 if __name__ == '__main__':
     app.run(debug=True)
